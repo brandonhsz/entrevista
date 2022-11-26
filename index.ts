@@ -1,4 +1,4 @@
-import { Server } from './src/Classes/Server';
+import { Server } from './src/classes/Server';
 
-const server = new Server(3000);
-server.listen();
+const server = new Server();
+server.init(3000)

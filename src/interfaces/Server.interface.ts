@@ -1,11 +1,8 @@
-import express from 'express';
-
+import e from 'express';
 export interface IServer {
-  app: express.Application;
-  port: number | string;
-
-  listen(): void;
-  configure(): void;
-  middleware(): void;
-  routes(): void;
+  app: e.Application;
+  router: e.Router;
+  init(): void;
+  config(): void;
+  middlewares(): void;
 }
