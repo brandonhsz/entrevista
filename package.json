@@ -1,0 +1,33 @@
+{
+  "name": "entrevista",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.25.8"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node ./dist/index.js",
+    "start:dev": "NODE_ENV=dev ts-node-dev index.ts",
+    "start:build": "tsc",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/morgan": "^1.9.3",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.28.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "morgan": "^1.10.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "*"
+  }
+}
