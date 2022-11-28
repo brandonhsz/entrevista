@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
 export class DataBase {
   private static instance: DataBase;
-  private sequelize: Sequelize
+  public sequelize: Sequelize
+
   private constructor() {
     this.sequelize = new Sequelize(process.env.DATABASE, process.env.DATABASE_NAME, process.env.DATABASE_PASS, {
       "host": "localhost",
