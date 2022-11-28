@@ -1,6 +1,16 @@
-import { Router } from 'express';
+import express from 'express';
 import { ProductController } from '../controllers';
 
-export const router = Router();
+export class IndexRouter {
+  public router: express.Router
+  private controller: ProductController = new ProductController()
 
-router.get('/', ProductController.getProducts);
+  constructor() {
+    this.router = express.Router();
+    this.initRoutes()
+  }
+
+  protected initRoutes(): void {
+    this.router.get('/', this.controller.getProducts)
+  }
+}
