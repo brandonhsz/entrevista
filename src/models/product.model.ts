@@ -2,11 +2,10 @@ import { DataTypes, Model } from 'sequelize';
 import { DataBase } from '../config/DataBase';
 
 const sequelize = DataBase.getInstance().sequelize;
-
 export class Product extends Model {
-  code: string;
-  name: string;
-  price: number;
+  readonly code: string;
+  readonly name: string;
+  readonly price: number;
 }
 
 Product.init({
@@ -21,6 +20,6 @@ Product.init({
   },
 
   price: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.FLOAT,
   }
 }, { sequelize });

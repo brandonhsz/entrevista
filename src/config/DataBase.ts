@@ -8,7 +8,6 @@ export class DataBase {
       'host': 'localhost',
       'dialect': 'postgres'
     });
-
     this.tryConnection();
   }
 
@@ -24,7 +23,19 @@ export class DataBase {
       await this.sequelize.authenticate();
       console.log('Connection succesfully');
     } catch (e) {
-      console.error('Unable to connect to the DataBase');
+      console.error('Unable to connect to the DataBase', e);
+    }
+  }
+
+  public async synchronize(): Promise<void> {
+    try {
+      //check if founds like this or need to select the specific model file
+      require('../models');
+
+      await this.sequelize.sync();
+      console.log('DataBase synchronized');
+    } catch (e) {
+      console.log('Error database sync', e);
     }
   }
 
