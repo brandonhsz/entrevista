@@ -1,1 +1,1 @@
-export { IndexRouter } from './Routes'
+export { IndexRouter } from './Routes';

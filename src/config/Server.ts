@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import { IServer } from '../interfaces';
-import { IndexRouter } from '../routes/Routes'
+import { IndexRouter } from '../routes/Routes';
 import dotenv from 'dotenv';
 
 export class Server implements IServer {
