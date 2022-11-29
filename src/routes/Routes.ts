@@ -12,5 +12,6 @@ export class IndexRouter {
 
   protected initRoutes(): void {
     this.router.get('/', this.controller.getProducts);
+    this.router.post('/', this.controller.createProduct);
   }
 }

@@ -4,7 +4,7 @@ export class DataBase {
   public sequelize: Sequelize;
 
   private constructor() {
-    this.sequelize = new Sequelize(process.env.DATABASE, process.env.DATABASE_NAME, process.env.DATABASE_PASS, {
+    this.sequelize = new Sequelize('test', 'postgres', 'postgres', {
       'host': 'localhost',
       'dialect': 'postgres'
     });
@@ -32,7 +32,7 @@ export class DataBase {
       //check if founds like this or need to select the specific model file
       require('../models');
 
-      await this.sequelize.sync();
+      await this.sequelize.sync({ alter: true });
       console.log('DataBase synchronized');
     } catch (e) {
       console.log('Error database sync', e);

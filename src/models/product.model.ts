@@ -3,9 +3,9 @@ import { DataBase } from '../config/DataBase';
 
 const sequelize = DataBase.getInstance().sequelize;
 export class Product extends Model {
-  readonly code: string;
-  readonly name: string;
-  readonly price: number;
+  declare code: string;
+  declare name: string;
+  declare price: number;
 }
 
 Product.init({
@@ -21,5 +21,9 @@ Product.init({
 
   price: {
     type: DataTypes.FLOAT,
+  },
+
+  name: {
+    type: DataTypes.STRING,
   }
-}, { sequelize });
+}, { sequelize, modelName: 'Product' });
