@@ -1,17 +1,19 @@
 import express from 'express';
-import { ProductController } from '../controllers';
+import { ProductController, StoreController } from '../controllers';
 
 export class IndexRouter {
   public router: express.Router;
-  private controller: ProductController = new ProductController();
-
+  private products: ProductController = new ProductController();
+  private store: StoreController = new StoreController();
   constructor() {
     this.router = express.Router();
     this.initRoutes();
   }
 
   protected initRoutes(): void {
-    this.router.get('/', this.controller.getProducts);
-    this.router.post('/', this.controller.createProduct);
+    this.router.get('/', this.products.getProducts);
+    this.router.post('/', this.products.createProduct);
+
+    this.router.post('/store', this.store.getTotal);
   }
 }
