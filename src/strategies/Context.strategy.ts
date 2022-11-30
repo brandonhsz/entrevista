@@ -1,4 +1,4 @@
-import { IStrategy } from '../interfaces';
+import { IStrategy, IStrategyProps } from '../interfaces';
 
 export class ContextStrategy {
   private strategy: IStrategy;
@@ -11,7 +11,7 @@ export class ContextStrategy {
     this.strategy = strategy;
   }
 
-  public doSomeBusinessLogic(data: number): number {
+  public doSomeBusinessLogic(data: IStrategyProps): number {
     const result = this.strategy.doStrategy(data);
     return result;
   }
