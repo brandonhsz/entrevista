@@ -1,11 +1,7 @@
 import { Request, Response } from 'express';
 import { IProduct } from '../interfaces';
 import { getAmount } from '../services/getAmount';
-import { ContextStrategy } from '../strategies/Context.strategy';
-import { DiscountBUlkStrategy } from '../strategies/DiscountBulk.strategy';
-import { DiscountAmountStrategy } from '../strategies/DiscountAmount.strategy';
-import { WithOutDiscount } from '../strategies/WithOutDiscount.strategy';
-
+import { ContextStrategy, DiscountAmountStrategy, DiscountBUlkStrategy, WithOutDiscount } from '../strategies';
 export class StoreController {
 
   async getTotal(req: Request, res: Response): Promise<void> {

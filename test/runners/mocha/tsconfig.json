@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    // mocha runs in node, which uses commonjs modules
-    "module": "CommonJs"
-  }
-}
