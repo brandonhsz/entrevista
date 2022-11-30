@@ -33,6 +33,5 @@ export function getAmount(items: IProduct[]): IData {
       };
     }
   });
-  console.log(itemList);
   return itemList;
 }

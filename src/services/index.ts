@@ -1,1 +1,1 @@
-export { getAmount } from './getDiscount';
+export { getAmount } from './getAmount';
