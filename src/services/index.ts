@@ -1,0 +1,1 @@
+export { getAmount } from './getDiscount';
