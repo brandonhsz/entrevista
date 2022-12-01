@@ -1,0 +1,1 @@
+export { passportStrategy } from './passport.middleware';

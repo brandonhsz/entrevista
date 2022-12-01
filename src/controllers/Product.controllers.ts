@@ -24,7 +24,7 @@ export class ProductController {
     const savedProduct = await newProduct.save();
     console.log(savedProduct);
     res.json({
-      message: 'Produvt created',
+      message: 'Product created',
       data: savedProduct
     });
   }
