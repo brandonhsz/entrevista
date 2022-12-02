@@ -1,11 +1,13 @@
 import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
+dotenv.config();
 export class DataBase {
   private static instance: DataBase;
   public sequelize: Sequelize;
 
   private constructor() {
-    this.sequelize = new Sequelize('test', 'postgres', 'postgres', {
-      'host': 'localhost',
+    this.sequelize = new Sequelize(process.env.DATABASE, process.env.DATABASE_NAME, process.env.DATABASE_PASS, {
+      'host': process.env.HOST,
       'dialect': 'postgres'
     });
     this.tryConnection();
