@@ -5,6 +5,6 @@ COPY yarn.lock ./
 COPY tsconfig.json ./
 
 RUN yarn install
-RUN yarn build
+RUN yarn start:build
 COPY . .
 CMD [ "yarn", "start:server"]
