@@ -19,7 +19,7 @@
     "start:build": "tsc",
     "lint": "eslint . --ext .ts",
     "test": "mocha --config test/runners/mocha/.mocharc.jsonc",
-    "start:configdb": "yarn start:createdb && yarn start:migration && yarn start:seed",
+    "start:configdb": "yarn start:migration && yarn start:seed",
     "start:createdb": "sequelize db:create",
     "start:migration": "sequelize db:migrate",
     "start:seed": "sequelize db:seed:all",
