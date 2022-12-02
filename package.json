@@ -18,7 +18,12 @@
     "start:dev": "NODE_ENV=dev ts-node-dev index.ts",
     "start:build": "tsc",
     "lint": "eslint . --ext .ts",
-    "test": "mocha --config test/runners/mocha/.mocharc.jsonc"
+    "test": "mocha --config test/runners/mocha/.mocharc.jsonc",
+    "start:configdb": "yarn start:createdb && yarn start:migration && yarn start:seed",
+    "start:createdb": "sequelize db:create",
+    "start:migration": "sequelize db:migrate",
+    "start:seed": "sequelize db:seed:all",
+    "start:server": "yarn start:configdb && yarn start"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -40,6 +45,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "mocha": "^10.1.0",
     "morgan": "^1.10.0",
+    "sequelize-cli": "^6.5.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "*"

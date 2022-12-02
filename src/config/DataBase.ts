@@ -29,16 +29,16 @@ export class DataBase {
     }
   }
 
-  public async synchronize(): Promise<void> {
-    try {
-      //check if founds like this or need to select the specific model file
-      require('../models');
+  // public async synchronize(): Promise<void> {
+  //   try {
+  //     // check if founds like this or need to select the specific model file
+  //     require('../models');
 
-      await this.sequelize.sync({ alter: true });
-      console.log('DataBase synchronized');
-    } catch (e) {
-      console.log('Error database sync', e);
-    }
-  }
+  //     await this.sequelize.sync({ alter: true });
+  //     console.log('DataBase synchronized');
+  //   } catch (e) {
+  //     console.log('Error database sync', e);
+  //   }
+  // }
 
 }

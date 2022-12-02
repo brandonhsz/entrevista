@@ -6,5 +6,4 @@ COPY tsconfig.json ./
 
 RUN yarn install
 COPY . .
-RUN yarn start:build
-CMD [ "node", "dist/index.js" ]
+CMD [ "yarn", "start:server"]

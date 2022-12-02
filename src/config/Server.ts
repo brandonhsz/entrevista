@@ -14,7 +14,7 @@ export class Server implements IServer {
     this.app = express();
     this.middlewares();
     this.dataBase = DataBase.getInstance();
-    this.dataBase.synchronize();
+    // this.dataBase.synchronize();
   }
 
   init(port?: number): void {
